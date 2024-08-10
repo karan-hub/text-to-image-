@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="text-black h-screen w-screen bg-gray-50 overflow-y-scroll scrollbar-hide" style="background-color: #FFFFF0;">
+    <nav class="flex justify-between items-center p-3 text-black shadow-lg fixed w-full top-0 z-50 bg-white">
+        <div class="flex items-center">
+            <div class="flex-shrink-0">
+                <img src="artify-high-resolution-logo-transparent.png" alt="Logo" class="h-10">
+            </div>
+            <h1 class="text-2xl font-semibold ml-4">AI Image Generator</h1>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+            <a href="#" class="text-lg font-medium hover:underline" id="navHome">Home</a>
+            <a href="#" class="text-lg font-medium hover:underline" id="navAbout">About</a>
+            <a href="#" class="text-lg font-medium hover:underline" id="navServices">Services</a>
+            <a href="#" class="text-lg font-medium hover:underline" id="navContact">Contact</a>
+        </div>
+        <button class="md:hidden bg-teal-700 hover:bg-teal-800 p-2 rounded focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </nav>
+    <div class="flex items-center flex-col my-24 overflow-x-hidden justify-center">
+        <div class="flex items-center flex-col justify-center w-full px-4">
+            <div class="w-full max-w-lg bg-white p-4 rounded-lg shadow-lg">
+                <div class="mb-4">
+                    <label for="prompt" class="block text-lg font-medium mb-2">Enter the image prompt:</label>
+                    <input type="text" id="prompt" placeholder="Describe the image"
+                        class="w-full p-2 border border-gray-300 rounded-md shadow-sm">
+                </div>
+                <div class="mb-4">
+                    <label for="num-images" class="block text-lg font-medium mb-2">Number of images:</label>
+                    <input type="number" id="num-images" min="1" max="10" value="1"
+                        class="w-full p-2 border border-gray-300 rounded-md shadow-sm">
+                </div>
+                <button onclick="generateImages()"
+                    class="bg-blue-500 text-white px-4 py-2 w-full rounded-md shadow-md hover:bg-blue-600 transition duration-300">Generate
+                    Images</button>
+            </div>
+        </div>
+        <div id="images-container" class="m-6 p-6 flex flex-wrap gap-12 justify-center">
+            <!-- Generated images will be appended here -->
+        </div>
+        
+        <div id="loading-spinner" class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50 hidden">
+            <div class="flex space-x-2">
+              <div class="circle w-6 h-6 rounded-full bg-white opacity-25 animate-pulse"></div>
+              <div class="circle w-6 h-6 rounded-full bg-white opacity-25 animate-pulse delay-100"></div>
+              <div class="circle w-6 h-6 rounded-full bg-white opacity-25 animate-pulse delay-200"></div>
+            </div>
+          </div>
+          
+          
+          
+          
+          
+      
+          
+          
+        
+
+        
+
+        
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
